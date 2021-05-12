@@ -19,7 +19,7 @@ require 'time'
 module DatadogAPIClient::V2
   # List of rules.
   class SecurityMonitoringListRulesResponse
-    # TODO.
+    # Object containing the list of rules.
     attr_accessor :data
 
     attr_accessor :meta
