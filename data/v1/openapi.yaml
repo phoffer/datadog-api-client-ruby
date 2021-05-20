@@ -4947,12 +4947,8 @@ components:
           type: boolean
         escalation_message:
           default: none
-          description: 'We recommend using the [is_renotify](https://docs.datadoghq.com/monitors/notifications/?tab=is_alert#renotify),
-
-            block in the original message instead.
-
-            A message to include with a re-notification. Supports the `@username`
-            notification we allow elsewhere.
+          description: 'A message to include with a re-notification. Supports the
+            `@username` notification we allow elsewhere.
 
             Not applicable if `renotify_interval` is `None`.'
           type: string
@@ -10160,6 +10156,11 @@ components:
         public_id:
           description: The organization public ID.
           type: string
+        tag_config_source:
+          description: The source of the usage attribution tag configuration and the
+            selected tags in the format `<source_org_name>:<selected tag 1>-<selected
+            tag 2>-<selected tag 3>`.
+          type: string
         tags:
           $ref: '#/components/schemas/UsageAttributionTagNames'
         updated_at:
@@ -12255,9 +12256,6 @@ components:
       description: Custom links help you connect a data value to a URL, like a Datadog
         page or your AWS console.
       properties:
-        is_hidden:
-          description: The flag for toggling context menu link visibility.
-          type: boolean
         label:
           description: The label for the custom link URL. Keep the label short and
             descriptive. Use metrics and tags as variables.
@@ -12268,11 +12266,9 @@ components:
             A relative URL must start with `/`.
           example: https://app.datadoghq.com/logs?query={{host}}
           type: string
-        override_label:
-          description: The label ID that refers to a context menu link. Can be `logs`,
-            `hosts`, `traces`, `profiles`, `processes`, `containers`, or `rum`.
-          example: logs
-          type: string
+      required:
+      - label
+      - link
       type: object
     WidgetDefinition:
       description: '[Definition of the widget](https://docs.datadoghq.com/dashboards/widgets/).'

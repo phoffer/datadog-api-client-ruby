@@ -18,7 +18,7 @@ require 'time'
 
 module DatadogAPIClient::V2
   class IncidentIntegrationMetadataType
-    INCIDENT_INTEGRATIONS = "incident_integrations".freeze
+    INCIDENT_INTEGRATION_METADATA = "incident_integration_metadata".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
